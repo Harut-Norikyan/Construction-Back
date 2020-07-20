@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+require('dotenv').config();
+const { Projects } = require('../models');
+const { Users } = require('../models');
+const { About } = require('../models');
+const { Contacts } = require('../models');
+
+(async () => {
+  await Projects.sync({alter :true});
+  await Users.sync({alter :true});
+  await About.sync({alter :true});
+  await Contacts.sync({alter :true});
+  process.exit(0);
+})();
